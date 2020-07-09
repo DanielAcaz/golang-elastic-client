@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"github.com/elastic/go-elasticsearch/v8"
 	"log"
 
-	response  "github.com/DanielAcaz/elastic-client/model"
+	"github.com/elastic/go-elasticsearch/v8"
+
+	response "github.com/daniel-acaz/elastic-client/model"
 )
 
 func main() {
@@ -65,7 +66,7 @@ func main() {
 
 	var users []response.User
 	for _, hit := range result.Hits.Hits {
-		user:= hit.Source
+		user := hit.Source
 		users = append(users, user)
 	}
 
